@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int is_valid_variable_name(char*name)
+//check if name starts with a latter or underscore
+    if(!isalpha(name[0]))&&
+    name[o]!='_'){
+        return o;
+    }    
+    //check the remaining characters in the name for
