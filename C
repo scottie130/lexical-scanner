@@ -1,11 +1,32 @@
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
 
-int is_valid_variable_name(char*name)
-//check if name starts with a latter or underscore
-    if(!isalpha(name[0]))&&
-    name[o]!='_'){
-        return o;
-    }    
-    //check the remaining characters in the name for
+int main() {
+  char name[100];
+
+  printf("Enter a variable name: ");
+  scanf("%s", name);
+
+  // Check if the name starts with a letter.
+  if (!isalpha(name[0])) {
+    printf("Invalid variable name. The name must start with a letter.\n");
+    return 1;
+  }
+
+  // Check if the name contains only letters, digits, or underscores.
+  for (int i = 1; name[i]; i++) {
+    if (!isalnum(name[i]) && name[i] != '_') {
+      printf("Invalid variable name. The name can only contain letters, digits, or underscores.\n");
+      return 1;
+    }
+  }
+
+  // Check if the name is too long.
+  if (strlen(name) > 31) {
+    printf("Invalid variable name. The name cannot be longer than 31 characters.\n");
+    return 1;
+  }
+
+  // The name is valid.
+  printf("Valid variable name.\n");
+  return 0;
+}
